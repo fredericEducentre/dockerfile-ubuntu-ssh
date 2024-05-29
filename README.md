@@ -1,6 +1,6 @@
 # dockerfile-ubuntu-ssh
 
-Try this image from :
+Try this image from docker hub :
 
 docker run -d --name ubuntussh -p 24:22 fredericeducentre/ubuntu-ssh
 
