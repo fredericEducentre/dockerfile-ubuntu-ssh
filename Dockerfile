@@ -3,6 +3,7 @@ FROM ubuntu:latest
 # Install SSH server
 RUN apt-get update
 RUN apt-get install -y openssh-server ca-certificates curl gnupg lsb-release sudo
+# Install docker
 RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bullseye stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 RUN mkdir -p /etc/apt/keyrings
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -16,6 +17,7 @@ RUN echo 'test:test' | chpasswd
 RUN mkdir /var/run/sshd
 # Expose the SSH port
 EXPOSE 22
+# Expose other ports
 EXPOSE 8080/tcp
 EXPOSE 9000/tcp
 EXPOSE 50000/tcp
