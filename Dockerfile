@@ -17,11 +17,5 @@ RUN echo 'test:test' | chpasswd
 RUN mkdir /var/run/sshd
 # Expose the SSH port
 EXPOSE 22
-# Expose other ports
-EXPOSE 8080/tcp
-EXPOSE 9000/tcp
-EXPOSE 50000/tcp
-EXPOSE 5432/tcp
-EXPOSE 5000/tcp
 # Start SSH server on container startup
 CMD ["/usr/sbin/sshd", "-D"]
